@@ -5,6 +5,9 @@ import lombok.*;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Transient;
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @Setter
@@ -27,4 +30,7 @@ public class User {
 
     @Column(name = "about")
     private String userAbout;
+
+    @Transient
+    private List<Rating> ratings = new ArrayList<>();
 }

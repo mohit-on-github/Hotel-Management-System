@@ -25,7 +25,8 @@ public class UserController {
         return ResponseEntity.status(HttpStatus.CREATED).body(savedUser);
     }
 
-    @PostMapping("/{userId}")
+    @GetMapping
+            ("/{userId}")
     public ResponseEntity<User> getUserById(@PathVariable String userId){
         User user = userService.getSingleUser(userId);
         return ResponseEntity.status(HttpStatus.FOUND).body(user);
